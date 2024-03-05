@@ -7,6 +7,16 @@
     text-rendering: optimizeLegibility;
 }
 
+@font-face {
+    font-family: 'NohemiBlack';
+    src: url('../fonts/Nohemi-Black.woff2') format('woff2'), /* Modern Browsers */
+         url('../fonts/Nohemi-Black.otf') format('opentype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -15,6 +25,7 @@ html {
     --blue: #41c2d5;
 
     --font-regular: 'nohemiregular';
+    --font-black: 'NohemiBlack';
     --color-regular: var(--blue);
 
 }
@@ -174,8 +185,13 @@ figure.active {
 
 }
 
+figcaption {
+    font-weight: bold;
+    text-transform:uppercase;
+    font-family: var(--font-black);
+}
+
 .description {
-    text-align: center;
     line-height: 2rem;
 
 }
