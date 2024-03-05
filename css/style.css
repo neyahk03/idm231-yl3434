@@ -120,6 +120,7 @@ div.selection {
     border: 1px solid black;
 } */
 
+
 div.selection img {
     width: 100%;
     height: 100%;
@@ -142,30 +143,40 @@ div.selection img:active{
 .content {
     width: calc(100vw - 2rem);
     border: 3px solid black;
-    /* aspect-ratio: 16/9; */
     border-radius: 15px;
 
-    /* display: flex;
-    justify-content: center;
-    text-align: center;
-    align-self: center; */
     margin: 1rem auto;
-    margin-bottom: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-bottom: 3rem;
     box-shadow: 4px 6px black;
-
     padding: 2rem;
 
     display: grid;
-    grid-template-columns: repeat(2,auto);
-
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    text-align: left;
     opacity: 0;
+    transition: .2s ease-in-out;
 }
 
-.content.active {
-    opacity: 1;
+figure {
+    display: none;
+}
+
+figure img {
+    height: 8rem;
+}
+
+figure.active {
+    display: block;
+    text-align: center;
 
 }
 
+.description {
+    text-align: center;
+    line-height: 2rem;
+
+}
 
