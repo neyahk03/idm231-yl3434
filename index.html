@@ -7,20 +7,67 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
+
 <body>
     <header>
-        <h1>What <img src="images/jellycat-logo.webp" alt="jellycat"> are you?</h1>
+        <h1><img src="images/jellycat-logo.webp" alt="jellycat"></h1>
+
+        <div>
+            <button class="help"><img src="icons/help-button.png" alt="help button"></button>
+        </div>
     </header>
 
-    <main>
-        
-        <form action="">
-            <label for="birthday">Enter your birthday: </label>
-            <input type="date" id="birthday" name="birthday">
-            <input type="submit">
+    <section class="birthday-input">
+        <form class="birthday-form">
+            <div><h1>What Jellycat are you?</h1></div>
+            <div class="control">
+                <label for="birthday">Please enter your birthday to find out</label>
+                <input type="date" name="birthday" id="birthday1" required />
+            </div>
+            <div class="control">
+                <button class="submit" type="submit">Submit</button>
+            </div>
         </form>
+    </section>
 
-    </main>
+
+    <div class="main-content">
+        <div class="selection">
+            <img class="avocado" src="images/avocado.jpeg" alt="avocado">
+            <img src="images/bee.jpeg" alt="bee">
+            <img src="images/dragon.webp" alt="dragon">
+            <img src="images/bunny.jpeg" alt="bunny">
+            <img src="images/egg.webp" alt="egg">
+            <img src="images/heart.jpeg" alt="heart">
+            <img src="images/bear.jpeg" alt="bear">
+            <img src="images/cat.webp" alt="cat">
+            <img src="images/dino.jpeg" alt="dino">
+            <img src="images/dog.jpeg" alt="dog">
+            <img src="images/duck.webp" alt="duck">
+            <img src="images/octopus.jpeg" alt="octopus">
+        </div>
+    </div>
+
+    <div class="content" id="aries">
+        <figure>
+            <img src="images/avocado.jpeg" alt="avocado">
+            <figcaption>Aries - date</figcaption>
+        </figure>
+        <p class="description">Aries, the first sign of the zodiac, is characterized by its dynamic and energetic nature. Individuals born under this sign are confident, assertive, and always ready for a challenge. Their competitive spirit and impulsive tendencies drive them to pursue their goals with enthusiasm, often making them natural leaders who thrive in fast-paced environments.</p>
+    </div>
+
+    <div class="content" id="capricorn">
+        <figure>
+            <img src="images/bee.jpeg" alt="bee">
+            <figcaption>Capricorn - date</figcaption>
+        </figure>
+        <p class="description">Capricorn, the tenth sign, is characterized by its ambitious and disciplined nature. Those born under this sign are hardworking, responsible, and value structure. Capricorns are determined to achieve their goals and often rise to positions of leadership. Their reserved demeanor masks a strong and enduring work ethic.</p>
+    </div>
+
+
+
+    <script src="js/app.js"></script>
     
+
 </body>
 </html>
