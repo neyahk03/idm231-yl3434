@@ -5,6 +5,25 @@ const figure = document.querySelector('figure');
 const pic = document.querySelector('.pic');
 const caption = document.querySelector('figcaption');
 const box = document.querySelector('.content');
+const sound = document.querySelector('#audio_player');
+const close = document.querySelector('.close');
+// const pauseButton = document.querySelector('.pause');
+
+// pauseButton.addEventListener('click', () => {
+//     sound.pause();
+// })
+
+const helpButton = document.querySelector('.help');
+helpButton.addEventListener('click', () => {
+    console.log(helpButton);
+})
+
+close.addEventListener ('click', () => {
+    console.log('its working');
+    box.style.opacity = '0';
+})
+
+
 
 submitButton.addEventListener('click', getDate);
 
@@ -79,7 +98,9 @@ function ariesDetails () {
     figure.classList.add('active');
     pic.src = Aries.src;
     caption.textContent=Aries.caption;
+    sound.src = Aries.sound;
     box.style.opacity = "1";
+    sound.play();
 }
 
 function taurusDetails () {
@@ -88,6 +109,8 @@ function taurusDetails () {
     pic.src = Taurus.src;
     caption.textContent=Taurus.caption;
     box.style.opacity = '1';
+    sound.src = Taurus.sound;
+    sound.play();
 }
 
 function geminiDetails (){
@@ -96,6 +119,8 @@ function geminiDetails (){
     pic.src = Gemini.src;
     caption.textContent=Gemini.caption;
     box.style.opacity = '1';
+    sound.src = Gemini.sound;
+    sound.play();
 }
 
 function cancerDetails () {
@@ -104,6 +129,8 @@ function cancerDetails () {
     pic.src = Cancer.src;
     caption.textContent=Cancer.caption;
     box.style.opacity = '1';
+    sound.src = Cancer.sound;
+    sound.play();
 }
 
 function leoDetails () {
@@ -112,6 +139,8 @@ function leoDetails () {
     pic.src = Leo.src;
     caption.textContent = Leo.caption;
     box.style.opacity = '1';
+    sound.src = Leo.sound;
+    sound.play();
 }
 
 function virgoDetails () {
@@ -120,6 +149,8 @@ function virgoDetails () {
     pic.src = Virgo.src;
     caption.textContent =  Virgo.caption;
     box.style.opacity = '1';
+    sound.src = Virgo.sound;
+    sound.play();
 }
 
 function libraDetails () {
@@ -128,6 +159,8 @@ function libraDetails () {
     pic.src = Libra.src;
     caption.textContent = Libra.caption;
     box.style.opacity = '1';
+    sound.src = Libra.sound;
+    sound.play();
 }
 
 function scorpioDetails () {
@@ -174,19 +207,22 @@ function picesDetails () {
 const Aries = {
     value: 'At their core, Aries do things their own way. They are unafraid of conflict, highly competitive, and honest. They throw themselves at the world eagerly and without fear. Aries are driven by a desire to prove themselves and their strength. They have high energy, and are competitive and ambitious. They naturally take charge because they are good at initiating new projects. They can also be impatient, but are naturally active and don\'t like to waste time. While Aries like competition, they don\'t like to play games. They are highly self-aware, have strong opinions and are always ready to defend them.',
     src: "images/avocado.jpeg",
-    caption: "Aries (03/21 - 04/19)"
+    caption: "Aries (03/21 - 04/19)",
+    sound: "audio/1.mp3"
 }
 
 const Taurus = {
     value: 'Tauruses are the human equivalent of moss. A handmade wooden chair. They are normally satisfied with the way things are. They embody stability. Sitting in a patch of grass admiring the breeze. When everything else seems to be falling apart, Tauruses are a rock of dependability in an oasis of calm. Practical knowledge and experience is their modus operandi. Tauruses are oriented around the physical world. They tend to be grounded and logical. They love routine and they\'re committed to their own comfort. They like to be in control. They\'re patient and steady, and their materialism is an extension of their pursuit of stability. Once they get into a groove, it\'s difficult for them to get out of it. Object in motion stays in motion. Object at rest stays at rest. Appreciative of beauty. Attuned to physical pleasure. They like things to be predictable. They are perfectly happy eating the same meal over and over, or wearing the same outfit for a week straight. They would prefer things be consistent than chaotically good. They like to discover what they have the most fun doing, and then do it to the extreme. Tauruses have a regal quality about them. They are graceful and diligent laborers. They can be stubborn, bull-headed, and set in their ways, but they are also great listeners and very dependable. Tauruses can absolutely go on forever. They are tireless machines. And no matter what someone throws at them, they will inevitably overcome their obstacles because they\'ve already prepared for every contingency. They are the hand-built truck that will never break down.',
     src: "images/bee.jpeg",
     caption: "Taurus (04/20 - 05/20)",
+    sound: 'audio/2.mp3'
 }
 
 const Gemini = {
     value: 'Geminis are very intelligent and pick up knowledge quickly. They are perceptive, analytical, and often very funny. They have an unreserved, childlike curiosity, always asking new questions. Geminis have an uncanny ability to size up a person\'s character in a matter of seconds, even if they only just met them. If someone\'s bluffing, they\'ll be the first to notice. They are great communicators because they tend to be very responsive and sensitive listeners. Geminis are versatile, comfortable being both introverts and extroverts. They are quick to adapt to the energy of a room they can be the life of the party or a complete wallflower. Geminis know how to bring dissimilar people together and make them get along.',
     src: "images/dragon.webp",
     caption: 'Gemini (05/21 - 06/20)',
+    sound: 'audio/3.mp3'
 }
 
 const Cancer = {
