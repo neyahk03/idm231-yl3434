@@ -24,13 +24,29 @@
                 <label for="birthday">Enter your birthday to find out</label>
                 <input type="date" name="birthday" id="birthday1" required/>
             </div>
+            <p class="error">Please enter valid birthday</p>
             <div class="control">
                 <button class="submit" type="submit">Submit</button>
             </div>
         </form>
     </section>
 
-    <div class="helpbox"></div>
+    <div class="helpbox">
+
+        <div class="helpcontent"> 
+            <img class="closehelp" src="icons/close.png" alt="close button">
+
+            <div>
+                <h2>Welcome to Jellycat generator</h2>
+                <p>To find out your character, you can:</p>
+                <p><strong>Input your birthday</strong> or <strong>Click on each character to view details.</strong></p>
+            </div>
+
+            <img class="sticker" src="images/JELC3M.jpg" alt="jellycat">
+            
+        </div>
+
+    </div>
 
 
     <div class="main-content">
@@ -59,9 +75,11 @@
 
             <img class="octopus" onclick="picesDetails()" src="images/octopus.jpeg" alt="octopus">
         </div>
+
+        <p>Select one of the characters above to view details</p>
     </div>
 
-    <p>Select one of the characters above to view details</p>
+    
 
     <div class="content" id="sign">
         <figure>
@@ -71,7 +89,7 @@
         <p class="description"></p>
         <audio id="audio_player" src=""></audio>
 
-        <p class="close">Close</p>
+        <img class="close" src="icons/close.png" alt="close button">
         <!-- <div>
             <button class="pause">Pause</button>
         </div> -->

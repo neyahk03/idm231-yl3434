@@ -7,12 +7,25 @@ const caption = document.querySelector('figcaption');
 const box = document.querySelector('.content');
 const sound = document.querySelector('#audio_player');
 const close = document.querySelector('.close');
+const error = document.querySelector('.error');
+
+const closeHelp = document.querySelector('.closehelp');
+const helpBox = document.querySelector('.helpbox');
 
 
 const helpButton = document.querySelector('.help');
+
 helpButton.addEventListener('click', () => {
     console.log(helpButton);
+    helpBox.classList.add('active');
 })
+
+closeHelp.addEventListener('click', () => {
+    console.log('its being clicked')
+    helpBox.classList.toggle('active');
+})
+
+
 
 close.addEventListener ('click', () => {
     console.log('its working');
@@ -85,6 +98,10 @@ if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
 } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
     console.log('Aquarius');
     aquariusDetails();
+
+} else  {
+    console.log('there is nothing');
+    alert('Please enter valid birthday!')
 }
 };
 
@@ -218,7 +235,7 @@ const Aries = {
 }
 
 const Taurus = {
-    value: 'Tauruses are the human equivalent of moss. A handmade wooden chair. They are normally satisfied with the way things are. They embody stability. Sitting in a patch of grass admiring the breeze. When everything else seems to be falling apart, Tauruses are a rock of dependability in an oasis of calm. Practical knowledge and experience is their modus operandi. Tauruses are oriented around the physical world. They tend to be grounded and logical. They love routine and they\'re committed to their own comfort. They like to be in control. They\'re patient and steady, and their materialism is an extension of their pursuit of stability. Once they get into a groove, it\'s difficult for them to get out of it. Object in motion stays in motion. Object at rest stays at rest. Appreciative of beauty. Attuned to physical pleasure. They like things to be predictable. They are perfectly happy eating the same meal over and over, or wearing the same outfit for a week straight. They would prefer things be consistent than chaotically good. They like to discover what they have the most fun doing, and then do it to the extreme. Tauruses have a regal quality about them. They are graceful and diligent laborers. They can be stubborn, bull-headed, and set in their ways, but they are also great listeners and very dependable. Tauruses can absolutely go on forever. They are tireless machines. And no matter what someone throws at them, they will inevitably overcome their obstacles because they\'ve already prepared for every contingency. They are the hand-built truck that will never break down.',
+    value: 'Tauruses are like sturdy handmade chairs, embodying stability and satisfaction with the status quo. Grounded and logical, they thrive on routine and control, finding comfort in predictability. Patient and steady, they pursue stability through practicality and materialism. Once they find their groove, they\'re difficult to sway. Appreciating beauty and physical pleasure, they prefer consistency over chaos, happily sticking to familiar routines and comforts. While they can be stubborn and set in their ways, they are also attentive listeners and reliable companions. Tireless and prepared for any challenge, Tauruses are like hand-built trucks that never break down, navigating life with grace and diligence.',
     src: "images/bee.jpeg",
     caption: "Taurus (04/20 - 05/20)",
     sound: 'audio/2.mp3'
@@ -246,7 +263,7 @@ const Leo = {
 }
 
 const Virgo = {
-    value: 'Virgos are known for being perfectionists. They are known for their attention to detail, which helps them find patterns where there are none. At times, Virgos can be finicky and critical to a fault. It\'s true that Virgos are very particular, but that doesn\'t necessarily mean that they keep neat spaces. Their particularities and habits don\'t necessarily line up with traditional views of cleanliness. They could live in what looks like a Tasmanian devil-style dust storm ruin, but still impose a “no shoes in the house” or “no outside clothes on the bed” rule. Maybe their house looks cluttered, but they still know where everything is. Everything has its place. Virgos prefer to exist in organized spaces, but put helping others over their own comfort. A Virgo can become so busy fixing the lives of those around them that they don\'t put much work into providing for their own needs. Virgos are rarely motivated by their own self-interest. Virgos are also known for being intelligent, but because of their introverted nature they can sometimes have trouble expressing themselves. Talking to them may feel like floating on the surface of existence, and like you never know what they\'re thinking and feeling deep inside. Their emphasis on thoughts and ideas can seem like a cover-up for their lack of emotional depth. In reality, they are a fortress unto themselves—the definition of self-containment. Virgos will be endlessly accepting of whatever you have to share, but may not see the value in spontaneously performing a similar excavation of themselves for anyone else.',
+    value: 'Virgos, known for perfectionism and keen attention to detail, can be finicky and critical. Their particularities don\'t always align with cleanliness standards; they prioritize organization but may live in clutter. Despite their focus on others, they often neglect their own needs. While intelligent, their introverted nature can make communication challenging, leading to perceptions of emotional depthlessness. In truth, they are self-contained fortresses, willing to listen but hesitant to share in return.',
     src: 'images/heart.jpeg',
     caption: 'Virgo (08/23 - 09/22)',
     sound: 'audio/6.mp3',
@@ -282,7 +299,7 @@ const Capricorn = {
 }
 
 const Aquarius = {
-    value: "Aquarians are archetypal outcasts. This doesn\'t mean they\'re loners. In fact, they thrive in large groups—charming you with their peculiar senses of humor, intriguing you with fun facts about the history of disposable straws, or convincing you to join their reading groups. The alienation they feel is often self-imposed—a result of their knee-jerk contrarianism, rather than a lack of social intelligence. They try to be weird. Aquarians hang grapefruit rinds from the wall and call it art, they pretend to actually like noise music, they saturate their internal monologues with SAT words. Intelligence, to them, means the ability to formulate the most unpopular opinion possible. If they were white sheep, they\'d dye their wool black just to prove a point. They are destined to live their lives in direct opposition to the current world. In fact, they are world-builders. An entire universe exists in their heads, and this universe adheres to its own set of logic that doesn\'t map onto reality. They aren't anarchists. They are utopians. They are not cold. They are rational. To them, emotions are just holes in their idealistic vessels. Why succumb to sensitivity when there is so much knowledge to acquire, so many problems to be solved, worlds to invent?They sometimes ask, “Why can\'t I be normal?” but in reality, they find normalcy boring. They want to be unknowable. Aquarians want to evade definition. Definitions are binding little rules that other people use to restrict their movement, and they must resist anything that infringes on their freedom to drift. Between definitions, between the individual and the common, between themselves and humanity. The ultimate Aquarian struggle is resolving the tension between their need for community, and their need for complete detachment. Aquarians are always running little tests. They live their lives as one big science experiment, using the element of surprise to collect reactions and construct theories about the intricacies of human nature. They are walking abstract art pieces, shattering traditional perspectives with their complete disregard for convention. They are martyrs to the cause of humanity. Freedom is their only demand.",
+    value: "Aquarians are societal outliers, thriving in group settings with their unique humor and penchant for intriguing conversation. They embrace contrarianism, relishing in their eccentricities and challenging norms. Their intelligence lies in formulating unconventional opinions, always pushing against the current. They're not anarchists but rather envisioners of utopias, crafting worlds within their minds governed by their own logic. Rational and detached, they prioritize knowledge over emotions, viewing sentimentality as a hindrance to progress. Normalcy bores them; they crave the freedom to be enigmatic and undefinable. Aquarians navigate the tension between community and detachment, constantly testing boundaries and observing human behavior as if conducting a grand experiment. They defy conventions, embodying abstract art in motion and serving as champions of individuality. Their ultimate quest is for freedom, challenging societal constraints while pushing the boundaries of human understanding.",
     src: 'images/duck.webp',
     caption: 'Aquarius (01/20 - 02/18)',
     sound: 'audio/11.mp3',

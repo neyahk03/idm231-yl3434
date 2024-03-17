@@ -33,18 +33,28 @@ html {
 body {
     font-family: var(--font-regular);
     text-align: center;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1rem;
+    padding: 1rem;
+    /* border-bottom: 1px solid black; */
+
+    grid-column: 1/ span 2;
+
 }
 
 button.help {
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 section {
@@ -60,6 +70,7 @@ input {
     outline: none;
     padding: 0.75rem 0.5rem;
     width: 100%;
+    cursor: pointer;
 }
 
 label {
@@ -82,6 +93,7 @@ button.submit {
     background: var(--color-regular);
     padding: 0.5rem 1rem;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 button.submit:active {
@@ -91,45 +103,38 @@ button.submit:active {
 section.birthday-input {
     /* background: pink; */
     width: 50vw;
-    margin: 0 auto;
+    height: 350px;
     padding: 3rem;
-    border: 4px solid black;
-    border-radius: 15px;
-    box-shadow: 4px 6px black;
+    border: 1px solid black;
+    /* border: 4px solid black; */
+    /* border-radius: 15px; */
+    /* box-shadow: 4px 6px black; */
 }
 
 
 
 div.main-content{
-    /* border: 1px solid red; */
-    margin: 2rem 0;
-    display: flex;
+    
+    /* display: flex;
     justify-content: center;
-    flex-direction: column;
-    overflow: autofco0000-;
+    flex-direction: column; */
+    border: 1px solid black;
+    background-color: var(--blue);
+    padding: 1rem;
 }
 
 
 div.selection {
     /* background-color:lightblue; */
-    width: 100vw;
-    margin: 0 auto;
+    /* width: 100vw;
+    margin: 0 auto; */
     padding: 0 1rem;
 
     display: grid;
-    grid-template-columns: repeat(12, auto);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, auto);
     grid-gap: 0.5rem;
-
-
 }
-
-/* div.selection div {
-    width: calc(70vw/6);
-    text-align: center;
-    align-items: center;
-    border: 1px solid black;
-} */
 
 
 div.selection img {
@@ -144,6 +149,7 @@ div.selection img {
 div.selection img:hover{
     box-shadow: 3px 3px black;
     transform: translate(-3px, -3px);
+    cursor: pointer;
 }
 
 div.selection img:active{
@@ -152,23 +158,36 @@ div.selection img:active{
 }
 
 .content {
-    width: calc(100vw - 2rem);
+    grid-column: 1/ span 2;
+
+    /* width: calc(100vw - 3rem); */
+    width: 95vw;
     border: 3px solid black;
     border-radius: 15px;
 
     margin: 1rem auto;
-    margin-left: 1rem;
+    /* margin-left: 1rem;
     margin-right: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3rem; */
     box-shadow: 4px 6px black;
-    padding: 2rem;
+    padding: 1.5rem;
 
     display: grid;
     grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
     align-items: center;
     text-align: left;
     opacity: 0;
     transition: .2s ease-in-out;
+
+    .close {
+        width: 30px;
+        height: 30px;
+        grid-row: 1/2;
+        grid-column: 1/span 2;
+        justify-self: end;
+        cursor: pointer;
+    }
 }
 
 figure {
@@ -200,13 +219,63 @@ button {
     padding: 1rem;
 }
 
+
+/* help box */
 .helpbox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
     background: lightblue;
-    height: 10rem;
-    border: 3px solid black;
-    border-radius: 15px;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.helpbox.active {
+    display: flex;
+}
+
+.helpcontent {
+    height: 350px;
+    aspect-ratio: 3/2;
+    background: white;
+    z-index: 20;
+    margin: auto 0;
+    box-shadow: 5px 5px black;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+
+    .sticker {
+        justify-self: center;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+img.closehelp {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    justify-content: flex-end;
+    justify-self: end ;
+}
+
+strong {
+    color: var(--blue);
+}
+
+.error {
+    color: red;
     display: none;
 }
+
+
 
 
 
